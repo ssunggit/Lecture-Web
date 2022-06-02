@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이미지슬라이더</title>
+<style>
+	body {
+		padding: 10% 10%
+	}
+	
+	img {
+		width: 200px;
+		height: 200px;
+		float: left;
+	}
+	
+	button {
+		height: 200px;
+		float: left;
+		color: white;
+		background-color: green;
+	}
+</style>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+/*
+	$(document).ready(function() {
+		$('button').click(function() {
+			// $('img').eq(3)
+			$('img').last().prependTo('body')
+		})
+	})
+*/
+	$(document).ready(function() {
+		$('#prevBtn').click(function() {
+			$('img').last().prependTo('span')
+		})
+		
+		$('#nextBtn').click(function() {
+			$('img').first().appendTo('span')
+		})
+		
+		id = setInterval(function() {
+			// trigger 강제적으로 어떤 이벤트를 발생시킴 
+			$('#nextBtn').trigger('click')
+		}, 3000);
+	})
+</script>
+</head>
+<body>
+	<button id="prevBtn">PREV</button>
+	<span>
+		<img src="image/인장1.png">
+		<img src="image/인장2.png">
+		<img src="image/인장3.png">
+		<img src="image/인장4.png">
+	</span>
+	<button id="nextBtn">NEXT</button>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>week</title>
+<!-- CDN -->
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+<style>
+div{
+ 	display: flex;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+}
+
+.container{
+	position: absolute;
+	top : 50%;
+	left : 25%;
+	
+}
+
+#red{
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	float : left;
+	
+}
+#orange{
+	width: 100px;
+	height: 100px;
+	background-color: orange;
+	float : left;
+}
+#yellow{
+	width: 100px;
+	height: 100px;
+	background-color: yellow;
+	float : left;
+}
+#green{
+	width: 100px;
+	height: 100px;
+	background-color: green;
+	float : left;
+}
+#blue{
+	width: 100px;
+	height: 100px;
+	background-color: blue;
+	float : left;
+}
+#navy{
+	width: 100px;
+	height: 100px;
+	background-color: navy;
+	float : left;
+}
+#purple{
+	width: 100px;
+	height: 100px;
+	background-color: purple;
+	float : left;
+}
+</style>
+
+<script>
+$(document).ready(function() {
+	$('.m').hover(function(){
+			$('.m > span').text("요일"),
+			$(this).animate({
+				width:150,
+				height:150
+			})
+	},function(){
+		$('.m > span').empty();
+		$(this).animate({
+			width:100,
+			height:100
+		})
+	}),
+	
+	$('.t').hover(function(){
+			$('.t > span').text("요일"),
+			$(this).animate({
+				width:150,
+				height:150
+			})
+	},function(){
+		$('.t > span').empty();
+		$(this).animate({
+			width:100,
+			height:100
+		})
+	}),
+	
+	$('.w').hover(function(){
+			$('.w > span').text("요일"),
+			$(this).animate({
+				width:150,
+				height:150
+			})
+	},function(){
+		$('.w > span').empty();
+		$(this).animate({
+			width:100,
+			height:100
+		})
+	}),
+	
+	$('.th').hover(function(){
+			$('.th > span').text("요일"),
+			$(this).animate({
+				width:150,
+				height:150
+			})
+	},function(){
+		$('.th > span').empty();
+		$(this).animate({
+			width:100,
+			height:100
+		})
+	}),
+	
+	$('.f').hover(function(){
+			$('.f > span').text("요일"),
+			$(this).animate({
+				width:150,
+				height:150
+			})
+	},function(){
+		$('.f > span').empty();
+		$(this).animate({
+			width:100,
+			height:100
+		})
+	}),
+	
+	$('.s').hover(function(){
+			$('.s > span').text("요일"),
+			$(this).animate({
+				width:150,
+				height:150
+			})
+	},function(){
+		$('.s > span').empty();
+		$(this).animate({
+			width:100,
+			height:100
+		})
+	}),
+	
+	$('.su').hover(function(){
+			$('.su > span').text("요일"),
+			$(this).animate({
+				width:150,
+				height:150
+			})
+	},function(){
+		$('.su > span').empty();
+		$(this).animate({
+			width:100,
+			height:100
+		})
+	})	
+})
+</script>
+</head>
+
+<body>
+
+<div class = "container">
+	<div id="red" class="m">월<span></span></div>
+	<div id="orange" class="t">화<span></span></div>
+	<div id="yellow" class="w">수<span></span></div>
+	<div id="green" class="th">목<span></span></div>
+	<div id="blue" class="f">금<span></span></div>
+	<div id="navy" class="s">토<span></span></div>
+	<div id="purple" class="su">일<span></span></div>
+</div>
+</body>
+
+</html>

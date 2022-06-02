@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+
+// h1태그에 이벤트 정의 
+// 이벤트들을 json으로 씀
+	$(document).ready(function() {
+		$('h1').on({
+			click : function() {
+				$(this).css('color', 'red')
+				// 이벤트에 '(작은따옴표) 쓸 수 있고, 안쓸 수 도 있다.
+			}, 'mouseenter' : function() {
+				$(this).css('background-color', 'yellow')
+			}, mouseleave : function() {
+				$(this).css('background-color', 'white')
+			}
+		
+		})
+	/*
+		$('h1').click(function() {
+			console.log(this+"click")
+			// this는 모든 h1이 아니라 이벤트가 발생하는 대상이다. 
+			$(this).css('color', 'red')
+		})
+		
+		$('h1').hover(function() {
+			console.log('enter')
+		}, function() {
+			console.log('leave')
+		})
+		
+		$('h1').mouseenter(function() {
+			console.log(this+"mouseenter")
+			$(this).css('background-color', 'lightgray')
+		})
+		
+		$('h1').mouseleave(function() {
+			console.log(this+"mouseleave")
+			$(this).css('background-color', 'white')
+		})	
+	*/
+	})
+</script>
+</head>
+<body>
+	<h1>첫번째 문장</h1>
+	<h1>두번째 문장</h1>
+	<h1>세번째 문장</h1>
+</body>
+</html>

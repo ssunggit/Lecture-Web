@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+	h1{
+		display: none; 
+	 }
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+
+<script>
+	$(document).ready(function() {
+		/* 
+		let h1Tag = document.getElementsByTagName("h1")[0]
+		h1Tag.setAttribute("style", "display:block") 
+		// h1Tag는 자바스크립트 객체
+		*/
+		// h1 태그를 3초뒤에 보여주게 함 (밀리세컨드 기준 1000-> 1초)
+		/* $('h1').show(3000) */
+		/* $('h1').fadeIn(5000) */
+		/* $('h1').slideDown(5000) */
+		// $('h1') : 제이쿼리 객체
+		
+		// 3초에 "Hello JQUERY" 문장을 보인 후, 글자색을 파란색으로 변경한 후,
+ 		// 슬라이드효과로 올라갔다 내려갔다를 수행한 후, 배경색을 노란색, 글자색을 빨간색 
+ 		// 함수체이닝
+ 		// show함수가 실행되자마자 3초에 관계없이 css가 먹힌다.
+ 		// 
+		/* $('h1').show(3000).css('color', 'blue') */
+		
+		// .show( duration [, easing ] [, complete ] ) 옵션인 complete(function 타입)를 이용하여ㅛㅕ 3초 후에 css를 적용시킬 수 있다
+		$('h1').show(3000, function() {
+			$(this).css('color', 'blue')
+			$(this).slideUp(1000).slideDown(1000, function() {
+/* 				$(this).css('background-color', 'yellow').css('color', 'red') */				
+ 				$(this).css({
+ 					color : 'red',
+ 					'background-color' : 'yellow'
+ 				})		
+			})
+		}) 
+	})	
+</script>
+
+
+</head>
+<body>
+	<h1>Hello JQUERY</h1>
+</body>
+</html>

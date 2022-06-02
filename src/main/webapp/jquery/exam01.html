@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- 컨텐트 주석 ctrl + shift + /-->
+<!-- 컨텐트 주석풀기 ctrl + shift + \-->
+<!-- 프로토콜로 접근 : url 절대경로 -->
+<!-- <script src="http://localhost:9999/Lecture-Web/jquery/js/jquery-3.6.0.min.js"></script> -->
+<!-- <script src="/Lecture-Web/jquery/js/jquery-3.6.0.min.js"></script> -->
+<!-- 프로토콜로 접근 : url 상대경로 -->
+<!-- <script src="./js/jquery-3.6.0.min.js"></script> -->
+<!-- <script src="js/jquery-3.6.0.min.js"></script> -->
+<!-- CDN -->
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+<!-- <script>
+// 바디까지 다읽었을때 호출될떄 읽는다 
+// window가 다 로드되었을 때 
+	window.onload= function() {
+		alert('Hello');
+	}
+	
+	// window 함수가 덮어쓰기 되어 밑 함수만 실행된다.
+	// window.onload 를 여러개 만들어도 맨 뒤 하나만 실행된다.
+	window.onload = function() {
+		document.write('good!!!');
+	}
+	// jquery
+	// $(선택자).함수()
+	// window.onload 를 대체하기 위한 jquery 가 있다
+	// document객체가 준비되었을 때 실행
+	// 콜백함수 : 매개변수로 함수를 넘긴다.
+	$(document).ready(function() {
+		alert('hello');
+	})
+	//  $ is not defined -> 제이쿼리 문제! -> 제이쿼리 라이브러리가 설정되어 있지 않다.
+</script> -->
+<script>
+/* jquery는 함수 여러개 사용가능하지만 함수의 순서는 보장하지 않는다. */
+	$(document).ready(function() {
+			alert('hello');
+	})
+	
+	$(document).ready(function() {
+		alert('ready');
+	})
+	
+	/* (document).ready(function() {}) 축약버전*/
+	$(function(){
+		alert('ready2...');
+	})
+</script>
+
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.6.0.min.js"></script>
+<style>
+	div {
+		width: 100px;
+		height: 100px;
+		background-color: red;
+		/* 기본 포지션 : static */
+		/* absolute : 부모태그를 기준으로 포지션이 결정 */
+		/* relative : 원래 위치를 기준으로 (static 위치) 포지션이 결정 */
+		position: absolute;
+	}
+</style>
+<script>
+	$(document).ready(function() {
+		$('div').animate({
+			width : '200px',
+			left : '100px'
+		}, 2000)
+	})
+</script>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

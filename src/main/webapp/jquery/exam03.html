@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+
+<script>
+	$(document).ready(function() {
+		/* 
+		let pTags = document.getElementsByTagName("p")
+		// innerHTML : 태그로 인식 innerText : String 으로 인식- 태그를 제외하고 문자들만 인식 
+		let html = pTags[0].innerHTML
+		let text = pTags[0].innerText
+		 */
+		/* pTags[1].innerHTML = `<mark>Good</mark>` */
+		
+		// innerHTML
+		let html = $('p').html()
+		
+		// innerText
+		let text = $('p').text()
+		
+		// attribute
+		let attr = $('a').attr('href')
+		
+		alert('html : ' + html + '\ntext : ' + text + '\n주소 : ' + attr)
+		
+		// click
+		$('#btn01').click(function() {
+			let name = $('#name').val()
+			alert('name : ' + name)
+			
+		})
+		
+		$('#btn02').click(function() {
+			$('a').attr('href', 'https://www.daum.net/')
+		})
+		
+		$('#btn03').click(function() {
+			//$('p').html('<mark>문장변환</mark>')
+			// p태그의 갯수만큼 함수를 호출
+			$('p').html(function(index, element) {
+			console.log(index, element)
+				return '<mark>' + index + ':' + element + '</mark>' 
+			})
+		})
+		
+	})
+</script>
+</head>
+<body>
+	<p>내 이름은 <b>박현성</b>이고, 별명은 <i>썽</i>입니다</p>
+	<p>내 이름은 <strong>박현성</strong>이고, 별명은 <em>썽2</em>입니다</p>
+	이름 : <input type="text" id="name"><button id="btn01">입력완료</button><br>
+	<a href="http://www.naver.com">사이트로 이동</a><button id="btn02">주소변경</button><br>
+	<button id="btn03">문장변환</button>
+</body>
+</html>

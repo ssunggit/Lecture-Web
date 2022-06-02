@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ajax2</title>
+<script src="/Lecture-Web/jquery/js/jquery-3.6.0.min.js"></script> 
+<script>
+	$(document).ready(function() {
+		$('button').click(function() {
+			let name = $('#name').val()
+			let age = document.getElementById("age").value
+			
+			// let param = 'name=' + name + '&age=' + age
+			let params = {
+				name : name
+				, age: age
+			}
+			// post 방식의 ajax 사용법 2
+			$.post('param.jsp', params, function(result) {
+				$('#msgView').val(result)
+			})
+			
+			/* 
+			$.post('param.jsp', {name : name, age : age}, function(result) {
+				$('#msgView').val(result)
+			})
+			 */
+			 
+			/* 
+			$.post('param.jsp', {name : 'hong', age : 30}, function(result) {
+				$('#msgView').val(result)
+			})
+			 */
+			 
+			/*
+			$.post('param.jsp', "name=hong&age=30", function(result) {
+				$('#msgView').val(result)
+			})
+			*/
+			
+			// post 방식의 ajax 사용법 1
+			/*
+			$.ajax({
+				url : 'param.jsp'
+				// 키보드로 사용자가 입력하는 정보의 경우 대부분 보안때문에 post방식으로 넘김
+				, type : 'post'
+				// 키워드
+				//, data : 'name=hong&age=25'
+				// data 는 객체, 즉 Json 형태로 넘길 수 있다.
+				, data : {
+					name : name
+					,age : age
+				}
+									// 매개변수 
+				, success : function(data){
+					$('#msgView').val(data)
+				}, error : function(){
+					alert('실패')
+				}
+			})
+			
+			*/
+		})
+	})
+</script>
+</head>
+<body>
+<!-- 사용자가 입력한 정보를 서버쪽에 전달 -->
+	<textarea rows="10" cols="80" id="msgView"></textarea><br>
+	이름 : <input type="text" name="name" id="name"><br>
+	나이 : <input type="text" name="age" id="age"><br>
+	<button>전송</button>
+</body>
+</html>
