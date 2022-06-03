@@ -30,6 +30,16 @@
   	<servlet-name>method</servlet-name>
   	<url-pattern>/method</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>pinfoResult</servlet-name>
+  	<servlet-class>kr.ac.kopo.servlet.PInfoInputServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>  
+  	<servlet-name>pinfoResult</servlet-name>
+  	<url-pattern>/pinfoResult</url-pattern>
+  </servlet-mapping>
   <!--  
   <servlet>
   	<servlet-name>exam</servlet-name>
